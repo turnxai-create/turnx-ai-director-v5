@@ -1,9 +1,12 @@
 from flask import Flask
 from logger import logger
+from telegram import register
 
 app = Flask(__name__)
 
 logger.info("TURNX AI Director V5 starting...")
+
+register(app)
 
 
 @app.route("/", methods=["GET"])
